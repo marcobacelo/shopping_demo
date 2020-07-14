@@ -13,7 +13,10 @@ public class Loja {
 
     @Id
     @GeneratedValue
-    private int loja_number;
+    private Long id;
+
+    @Column
+    private Long loja_number;
 
     @Column
     private int cnpj;
@@ -24,7 +27,7 @@ public class Loja {
     @Column
     private int piso;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy="segmento")
     @JsonManagedReference
     @JsonIgnore
     private List<Segmento> segmentoList;
@@ -34,7 +37,7 @@ public class Loja {
 
     public Loja() {}
 
-    public Loja(int loja_number, int cnpj, String nome, int piso, List<Segmento> segmentoList, Date data_saida) {
+    public Loja(Long loja_number, int cnpj, String nome, int piso, List<Segmento> segmentoList, Date data_saida) {
         this.setLoja_number(loja_number);
         this.setCnpj(cnpj);
         this.setNome(nome);
@@ -43,11 +46,11 @@ public class Loja {
         this.setData_saida(data_saida);
     }
 
-    public int getLoja_number() {
+    public Long getLoja_number() {
         return loja_number;
     }
 
-    public void setLoja_number(int loja_number) {
+    public void setLoja_number(Long loja_number) {
         this.loja_number = loja_number;
     }
 

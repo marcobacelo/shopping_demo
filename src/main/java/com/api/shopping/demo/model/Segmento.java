@@ -12,4 +12,19 @@ public class Segmento {
 
     @Column
     String segmento;
+
+    public Segmento() {}
+
+    public Segmento(String segmento) {
+        this.setSegmento(segmento);
+    }
+
+    public String getSegmento (String segmento) { return segmento; }
+
+    public void setSegmento(String segmento) {
+        this.segmento = segmento;
+    }
+
 }
+
+
