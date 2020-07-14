@@ -46,7 +46,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n        \"data_saida\": \"2020-07-10\",\n        \"nome\": \"Leader\",\n        \"cnpj\": 122133,\n        \"piso\": 5\n    }\n]\n"
+					"raw": "{\n    \"loja_number\": 41645,\n    \"cnpj\": 65451,\n    \"nome\": \"DiSantinni\",\n    \"piso\": 1,\n    \"segmentoList\": [\n            {\n                \"segmento\": \"Calçados\"\n            }\n        ],\n    \"data_saida\": \"2020-07-10\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:32800/api/lojas",
@@ -76,10 +76,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"cnpj\": 123,\n    \"data_saida\": \"2020-07-14\",\n    \"nome\": \"Taco\",\n    \"piso\": 1\n}"
+					"raw": "    {\n        \"loja_number\": 41645,\n        \"cnpj\": 65451,\n        \"nome\": \"DiSantinni\",\n        \"piso\": 1,\n        \"segmentoList\": [\n            {\n                \"id\": 2,\n                \"segmento\": \"Calçados\"\n            }\n        ],\n        \"data_saida\": \"2020-07-10T00:00:00.000+00:00\"\n    }"
 				},
 				"url": {
-					"raw": "http://localhost:32800/api/lojas/update/2",
+					"raw": "http://localhost:32800/api/lojas/update/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,7 +89,7 @@
 						"api",
 						"lojas",
 						"update",
-						"2"
+						"1"
 					]
 				}
 			},
