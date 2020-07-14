@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  shopping_module:
+    build: .
+    volumes:
+      - ./:/app
+    container_name: 'shopping_module'
+    ports:
+      - 32800:8080
+
+  mysql:
+    image: mysql:5.7
+    container_name: 'shopping_db'
+    ports:
+      - 32801:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shopping_db
