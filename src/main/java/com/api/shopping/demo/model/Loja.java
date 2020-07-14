@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name="loja")
+@Table(name="LOJA")
 public class Loja {
 
     @Id
@@ -27,17 +27,17 @@ public class Loja {
     @Column
     private int piso;
 
-    @ManyToMany(mappedBy="segmento")
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     @JsonManagedReference
     @JsonIgnore
-    private List<Segmento> segmentoList;
+    private Set<Segmento> segmentoList;
 
     @Column
     private Date data_saida;
 
     public Loja() {}
 
-    public Loja(Long loja_number, int cnpj, String nome, int piso, List<Segmento> segmentoList, Date data_saida) {
+    public Loja(Long loja_number, int cnpj, String nome, int piso, Set<Segmento> segmentoList, Date data_saida) {
         this.setLoja_number(loja_number);
         this.setCnpj(cnpj);
         this.setNome(nome);
@@ -70,11 +70,11 @@ public class Loja {
         this.piso = piso;
     }
 
-    public List<Segmento> getSegmentoList() {
+    public Set<Segmento> getSegmentoList() {
         return segmentoList;
     }
 
-    public void setSegmentoList(List<Segmento> segmentoList) {
+    public void setSegmentoList(Set<Segmento> segmentoList) {
         this.segmentoList = segmentoList;
     }
 
