@@ -26,10 +26,6 @@ public class LojaService {
         return lojaDAO.findById(id);
     }
 
-    public Loja getLojaByCnpj(int cnpj) {
-        return lojaDAO.findLojaByCnpj(cnpj);
-    }
-
     public Loja updateLoja(Long id, Loja loja) {
         Optional<Loja> loja_data = lojaDAO.findById(id);
         Loja _loja = loja_data.get();
