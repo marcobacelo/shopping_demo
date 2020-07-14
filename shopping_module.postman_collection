@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "12929add-2909-43bf-9857-b2eda97ce6e3",
+		"name": "lojas_shopping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Loja",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:32800/api/lojas/get_loja?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"api",
+						"lojas",
+						"get_loja"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Requisição GET para 1 loja"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Loja",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"data_saida\": \"2020-07-10\",\n        \"nome\": \"Leader\",\n        \"cnpj\": 122133,\n        \"piso\": 5\n    }\n]\n"
+				},
+				"url": {
+					"raw": "http://localhost:32800/api/lojas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"api",
+						"lojas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Loja",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cnpj\": 123,\n    \"data_saida\": \"2020-07-14\",\n    \"nome\": \"Taco\",\n    \"piso\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:32800/api/lojas/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"api",
+						"lojas",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Lojas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:32800/api/lojas/get_all_lojas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32800",
+					"path": [
+						"api",
+						"lojas",
+						"get_all_lojas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
