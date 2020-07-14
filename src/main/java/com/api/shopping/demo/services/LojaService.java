@@ -18,19 +18,33 @@ public class LojaService {
         return lojaDAO.save(loja);
     }
 
-    public List<Loja> add(List<Loja> loja) {
-        return lojaDAO.saveAll(loja);
-    }
-
     public List<Loja> getAllLojas() {
         return lojaDAO.findAll();
     }
 
-    public Loja getLojaById(int id) {
-        return lojaDAO.findLojaByLoja_number(id);
+    public Optional<Loja> getLojaById(Long id) {
+        return lojaDAO.findById(id);
     }
 
     public Loja getLojaByCnpj(int cnpj) {
         return lojaDAO.findLojaByCnpj(cnpj);
+    }
+
+    public Loja updateLoja(Long id, Loja loja) {
+        Optional<Loja> loja_data = lojaDAO.findById(id);
+        Loja _loja = loja_data.get();
+
+        if (loja_data.isPresent()) {
+            _loja = loja_data.get();
+            _loja.setLoja_number(loja.getLoja_number());
+            _loja.setCnpj(loja.getCnpj());
+            _loja.setNome(loja.getNome());
+            _loja.setSegmentoList(loja.getSegmentoList());
+            _loja.setPiso(loja.getPiso());
+            _loja.setData_saida(loja.getData_saida());
+
+            add(_loja);
+        }
+        return _loja;
     }
 }
