@@ -20,7 +20,7 @@ https://docs.docker.com/compose/install/#install-compose
 
 As variáveis de conexão com o banco de dados, por padrão, estão configuradas utilizando a porta 32801 :)
 
-Caso precise alterar a porta, acesse na raiz do projeto o arquivo `docker-compose.yml` e mude a variável
+Caso precise alterar a porta, acesse na raiz do projeto o arquivo `docker-compose.yml` e mude a variável `ports` 
 
 ### Testar os endpoints
 
