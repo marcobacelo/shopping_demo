@@ -1,7 +1,3 @@
-<h1 align="center">
-  <img src="spring.png" alt="logo_spring" width="550px" />
-</h1>
-
 # Shopping Core API #
 
 ## Objetivos ##
