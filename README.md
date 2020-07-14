@@ -14,7 +14,7 @@ API responsável por gerenciar dados de lojas do Shopping
 
 #### Download e instalação do docker-compose ####
 
-https://docs.docker.com/compose/install/#install-compose
+* https://docs.docker.com/compose/install/#install-compose
 
 #### Configurando a conexão com o banco de dados ####
 
