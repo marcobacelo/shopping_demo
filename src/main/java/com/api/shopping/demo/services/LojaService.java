@@ -28,7 +28,8 @@ public class LojaService {
 
     public Loja updateLoja(Long id, Loja loja) {
         Optional<Loja> loja_data = lojaDAO.findById(id);
-        Loja _loja = loja_data.get();
+
+        Loja _loja = new Loja();
 
         if (loja_data.isPresent()) {
             _loja = loja_data.get();
